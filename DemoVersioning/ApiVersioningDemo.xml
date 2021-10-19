@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiVersioningDemo</name>
+    </assembly>
+    <members>
+        <member name="T:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions">
+            <summary>
+            Helper class for configuring the OpenApiInfo content for each version
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Custom Swagger Configurator constructor
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions.CreateOpenApiInfo(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiVersionDescription)">
+            <summary>
+            Internal implementation for building the Swagger basic config
+            </summary>
+            <param name="description">The description object containing the API version.</param>
+            <returns>Open API Info Object, providing the metadata about the Open API</returns>
+        </member>
+        <member name="T:ApiVersioningDemo.Controllers.BaseWeatherForecastController">
+            <summary>
+            Base class for all versioned controllers of WeatherForecast
+            </summary>
+        </member>
+        <member name="F:ApiVersioningDemo.Controllers.BaseWeatherForecastController.Summaries">
+            <summary>
+            Common property for all derived classes
+            </summary>
+        </member>
+        <member name="F:ApiVersioningDemo.Controllers.BaseWeatherForecastController._logger">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.BaseWeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{ApiVersioningDemo.Controllers.BaseWeatherForecastController})">
+            <summary>
+            Base WeatherForecast controller constructor
+            </summary>
+            <param name="logger">The logger</param>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.BaseWeatherForecastController.Log(Microsoft.AspNetCore.Mvc.ApiVersion)">
+            <summary>
+            Sample logging with called version
+            </summary>
+            <param name="version"></param>
+        </member>
+        <member name="T:ApiVersioningDemo.Controllers.v1_1.WeatherForecastController">
+            <summary>
+            WeatherForecast class
+            If the ApiVersion is superseeded by another version switch the Deprecated property to true
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.v1_1.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{ApiVersioningDemo.Controllers.v1_1.WeatherForecastController})">
+            <summary>
+            WeatherForecast constructor
+            </summary>
+            <param name="logger">logger</param>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.v1_1.WeatherForecastController.Get(Microsoft.AspNetCore.Mvc.ApiVersion)">
+            <summary>
+            Get the weather forecast (Expand to see remarks)
+            </summary>
+            <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("1.1")]</b>.<br /> It inherits the attribute from the class level</remarks>
+            <param name="version"></param>
+            <returns>A collection of WeatherForecast</returns>
+        </member>
+        <member name="T:ApiVersioningDemo.Controllers.v2_0.WeatherForecastController">
+            <summary>
+            WeatherForecast class
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.v2_0.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{ApiVersioningDemo.Controllers.v2_0.WeatherForecastController})">
+            <summary>
+            WeatherForecast constructor
+            </summary>
+            <param name="logger">logger</param>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.v2_0.WeatherForecastController.Get(Microsoft.AspNetCore.Mvc.ApiVersion)">
+            <summary>
+            Get the weather forecast
+            Demo info: The method does not need to be explicitly decorated with [MapToApiVersion("2.0")]. It inherits the attribute from the class level
+            </summary>
+            <param name="version">The version parameter</param>
+            <returns>A collection of WeatherForecast</returns>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.v2_0.WeatherForecast.ExtraInfo">
+            <summary>
+            This property was added on version 2.0
+            </summary>
+        </member>
+        <member name="T:ApiVersioningDemo.Startup">
+            <summary>
+            The Startup class
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Startup.XmlCommentsFilePath">
+            <summary>
+            The path for documentation file
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Startup.Configuration">
+            <summary>
+            Configuration read-only property
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup process of the application
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:ApiVersioningDemo.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure services
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">The services collection</param>
+        </member>
+        <member name="M:ApiVersioningDemo.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">The app builder</param>
+            <param name="env">The web host environment</param>
+            <param name="provider">The api version description provider</param>
+        </member>
+    </members>
+</doc>

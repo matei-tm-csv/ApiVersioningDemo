@@ -1,6 +1,6 @@
 using System;
 
-namespace DemoVersioning
+namespace ApiVersioningDemo.Models.v1_1
 {
     public class WeatherForecast
     {
