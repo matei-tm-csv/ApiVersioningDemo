@@ -35,20 +35,26 @@ They are derived from an abstract base controller that keeps the common characte
 
 #### v1.1 
 
-- It is marked as deprecated at class level
-- The Get method is marked as Obsolete
+- It is marked as deprecated at class level (as result, VERSION IS DEPRECATED is displayed)
+- The Get method is marked as Obsolete (as result, the endpoint is grayed out)
 - Uses a WeatherForecast model v1.1
+
+![image](https://user-images.githubusercontent.com/86602521/137956161-45671ad1-d558-40e5-90c7-5005038e3bc2.png)
 
 #### v1.2 
 
-- It is marked as deprecated at class level
+- It is marked as deprecated at class level (as result, VERSION IS DEPRECATED will be displayed only if MultiSkilledActor will be marked as well)
 - Uses a WeatherForecast model v1.1
 - The Get method has a patched version of processing the WeatherForecast
+
+![image](https://user-images.githubusercontent.com/86602521/137957109-37f48b16-4de1-43b1-a0f0-a3d3ea1a56eb.png)
 
 #### v2.0
 
 - Uses a WeatherForecast model v2.0
 - The Get method has an improved version
+
+![image](https://user-images.githubusercontent.com/86602521/137956341-9e3cc1df-4c38-45e2-b0a3-8e6bafb8c892.png)
 
 ### Model versions
 
