@@ -73,7 +73,7 @@ They are derived from an abstract base controller that keeps the common characte
 
 ### Model versions
 
-The model versions does not directly influence the version of the API and are not mandatory to have versions related to the API. For example, a model can stay forever as 1.0 and in the meantime other models to evolve to greater versions. The dependency could be better seen as "the changes in the models push the API version evolution".
+The model versions does not directly influence the version of the API, and it is not mandatory to have versions matched with the API. For example, a model can stay forever as 1.0 and in the meantime other models to evolve to greater versions. The dependency could be better seen as "the latest changes to the models push the API version evolution".
 
 ## Credits
 
