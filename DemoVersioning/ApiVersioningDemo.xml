@@ -183,8 +183,61 @@
             The path for documentation file
             </summary>
         </member>
+        <member name="T:ApiVersioningDemo.Models.v1_1.WeatherForecast">
+            <summary>
+            The WeatherForecast DTO
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.v1_1.WeatherForecast.Date">
+            <summary>
+            Date of the forecast
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.v1_1.WeatherForecast.TemperatureC">
+            <summary>
+            Temperature on Celsius scale
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.v1_1.WeatherForecast.TemperatureF">
+            <summary>
+            Temperature on Fahrenheit scale
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.v1_1.WeatherForecast.Summary">
+            <summary>
+            The summary of the forecast
+            <remarks>It will be replaced by extra info</remarks>
+            </summary>
+        </member>
+        <member name="T:ApiVersioningDemo.Models.v2_0.WeatherForecast">
+            <summary>
+            The WeatherForecast DTO
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.v2_0.WeatherForecast.Date">
+            <summary>
+            Date of the forecast
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.v2_0.WeatherForecast.TemperatureC">
+            <summary>
+            Temperature on Celsius scale
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.v2_0.WeatherForecast.TemperatureF">
+            <summary>
+            Temperature on Fahrenheit scale
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.v2_0.WeatherForecast.Summary">
+            <summary>
+            The summary of the forecast
+            <remarks>It will be replaced by extra info</remarks>
+            </summary>
+        </member>
         <member name="P:ApiVersioningDemo.Models.v2_0.WeatherForecast.ExtraInfo">
             <summary>
+            The extended info on forecast
             This property was added on version 2.0
             </summary>
         </member>
