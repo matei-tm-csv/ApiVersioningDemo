@@ -7,6 +7,7 @@
         <member name="T:ApiVersioningDemo.Controllers.ApiInheritableVersionAttribute">
             <summary>
             Allows inheriting the versions from the base class
+            Just as demo. A cleaner approach is to use ApiVersionNeutral
             Todo: Stop inheritance to only a single level depth
             </summary>
         </member>
@@ -41,6 +42,7 @@
             <summary>
             This class is a single point of changes for controllers that are available on limited range of versions
             Warning: Not recommended! Better approach is to use the ApiVersionNeutral
+                - The Deprecated property is hard to be maintained
             </summary>
         </member>
         <member name="T:ApiVersioningDemo.Controllers.v1_1.WeatherForecastController">
