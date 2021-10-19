@@ -27,7 +27,8 @@ namespace ApiVersioningDemo.Controllers.v1_1
         /// <summary>
         /// Get the weather forecast (Expand to see remarks)
         /// </summary>
-        /// <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("1.1")]</b>.<br /> It inherits the attribute from the class level<br />
+        /// <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("1.1")]</b>.
+        /// <br /> It inherits the attribute from the class level<br />
         /// Notify the behavior to the Obsolete attribute
         /// </remarks>
         /// <param name="version">The version parameter</param>

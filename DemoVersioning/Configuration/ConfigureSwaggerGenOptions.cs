@@ -42,7 +42,7 @@ namespace ApiVersioningDemo.Configuration
             {
                 Title = "Sample API with versioning Demo",
                 Version = description.ApiVersion.ToString(),
-                Description = @"<p>Note: Check <a href=""https://github.com/microsoft/aspnet-api-versioning""> for more info</a>.</p>",
+                Description = @"<p>Note: For more info on Aspnet api versioning check <a href=""https://github.com/microsoft/aspnet-api-versioning"">this page</a>.</p>",
                 Contact = new OpenApiContact
                 {
                     Name = "Cognizant Softvision",
