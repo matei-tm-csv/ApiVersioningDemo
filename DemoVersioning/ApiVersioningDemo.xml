@@ -25,6 +25,22 @@
             <param name="description">The description object containing the API version.</param>
             <returns>Open API Info Object, providing the metadata about the Open API</returns>
         </member>
+        <member name="T:ApiVersioningDemo.Configuration.VersioningExtension">
+            <summary>
+            Versioning extensions class
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Configuration.VersioningExtension.AddCustomizedVersioning(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Customize the Api versioning
+            </summary>
+            <param name="services">the services collection</param>
+        </member>
+        <member name="P:ApiVersioningDemo.Configuration.VersioningExtension.XmlCommentsFilePath">
+            <summary>
+            The path for documentation file
+            </summary>
+        </member>
         <member name="T:ApiVersioningDemo.Controllers.BaseWeatherForecastController">
             <summary>
             Base class for all versioned controllers of WeatherForecast
@@ -68,8 +84,31 @@
             <summary>
             Get the weather forecast (Expand to see remarks)
             </summary>
-            <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("1.1")]</b>.<br /> It inherits the attribute from the class level</remarks>
-            <param name="version"></param>
+            <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("1.1")]</b>.<br /> It inherits the attribute from the class level<br />
+            Notify the behavior to the Obsolete attribute
+            </remarks>
+            <param name="version">The version parameter</param>
+            <returns>A collection of WeatherForecast</returns>
+        </member>
+        <member name="T:ApiVersioningDemo.Controllers.v1_2.WeatherForecastController">
+            <summary>
+            WeatherForecast class
+            If the ApiVersion is superseeded by another version switch the Deprecated property to true
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.v1_2.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{ApiVersioningDemo.Controllers.v1_2.WeatherForecastController})">
+            <summary>
+            WeatherForecast constructor
+            </summary>
+            <param name="logger">logger</param>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.v1_2.WeatherForecastController.Get(Microsoft.AspNetCore.Mvc.ApiVersion)">
+            <summary>
+            Get the weather forecast (Expand to see remarks)
+            </summary>
+            <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("1.2")]</b>.<br /> It inherits the attribute from the class level
+            <br />Being a minor version it use the same model of v1.1</remarks>
+            <param name="version">The version parameter</param>
             <returns>A collection of WeatherForecast</returns>
         </member>
         <member name="T:ApiVersioningDemo.Controllers.v2_0.WeatherForecastController">
@@ -85,9 +124,9 @@
         </member>
         <member name="M:ApiVersioningDemo.Controllers.v2_0.WeatherForecastController.Get(Microsoft.AspNetCore.Mvc.ApiVersion)">
             <summary>
-            Get the weather forecast
-            Demo info: The method does not need to be explicitly decorated with [MapToApiVersion("2.0")]. It inherits the attribute from the class level
+            Get the weather forecast (Expand to see remarks)
             </summary>
+            <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("2.0")]</b>.<br /> It inherits the attribute from the class level</remarks>
             <param name="version">The version parameter</param>
             <returns>A collection of WeatherForecast</returns>
         </member>
@@ -99,11 +138,6 @@
         <member name="T:ApiVersioningDemo.Startup">
             <summary>
             The Startup class
-            </summary>
-        </member>
-        <member name="P:ApiVersioningDemo.Startup.XmlCommentsFilePath">
-            <summary>
-            The path for documentation file
             </summary>
         </member>
         <member name="P:ApiVersioningDemo.Startup.Configuration">
