@@ -12,6 +12,7 @@
       - [v1.2](#v12)
       - [v2.0](#v20)
     - [Model versions](#model-versions)
+    - [Credits](#credits)
 
 ## Purpose
 
@@ -19,7 +20,7 @@ To provide an example for implementing concurrent versioning support to Web API.
 
 ## Description
 
-It is an ASP.NET Core Web API project providing a basic architecture for showing several facets of versioning.
+It is an ASP.NET Core Web API project providing a basic architecture for showing several facets of versioning. It is focused on URL segment routing.
 
 ![image](https://user-images.githubusercontent.com/86602521/137997215-091045b8-7d9b-4f22-8812-58234905d778.png)
 
@@ -72,4 +73,10 @@ They are derived from an abstract base controller that keeps the common characte
 ### Model versions
 
 The model versions does not directly influence the version of the API and are not mandatory to have versions related to the API. For example, a model can stay forever as 1.0 and in the meantime other models to evolve to greater versions. The dependency could be better seen as "the changes in the models push the API version evolution".
+
+## Credits
+
+- Mark Heath: Pluralsight course  [
+Versioning and Evolving Microservices in ASP.NET Core](https://app.pluralsight.com/library/courses/versioning-evolving-microservices-asp-dot-net-core/exercise-files)
+- ASP.NET API Versioning [samples](https://github.com/dotnet/aspnet-api-versioning/tree/master/samples)
 
