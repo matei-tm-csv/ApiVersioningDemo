@@ -41,6 +41,7 @@ It uses the ApiVersionNeutral attribute and it is independent from versions (i.e
 
 ### MultiSkilledActor Controller versions characteristics
 
+A demo class that presents a usecase with a controller with a limited lifetime between v1.2 and v2.0.
 It inherits the versions placed on a base class decorated with ApiInheritableVersion
 
 ### WeatherForecast Controller versions characteristics
