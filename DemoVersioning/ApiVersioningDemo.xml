@@ -4,41 +4,10 @@
         <name>ApiVersioningDemo</name>
     </assembly>
     <members>
-        <member name="T:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions">
+        <member name="T:ApiVersioningDemo.Controllers.ApiInheritableVersionAttribute">
             <summary>
-            Helper class for configuring the OpenApiInfo content for each version
-            </summary>
-        </member>
-        <member name="M:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
-            <summary>
-            Custom Swagger Configurator constructor
-            </summary>
-            <param name="provider"></param>
-        </member>
-        <member name="M:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
-            <inheritdoc />
-        </member>
-        <member name="M:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions.CreateOpenApiInfo(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiVersionDescription)">
-            <summary>
-            Internal implementation for building the Swagger basic config
-            </summary>
-            <param name="description">The description object containing the API version.</param>
-            <returns>Open API Info Object, providing the metadata about the Open API</returns>
-        </member>
-        <member name="T:ApiVersioningDemo.Configuration.VersioningExtension">
-            <summary>
-            Versioning extensions class
-            </summary>
-        </member>
-        <member name="M:ApiVersioningDemo.Configuration.VersioningExtension.AddCustomizedVersioning(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-            <summary>
-            Customize the Api versioning
-            </summary>
-            <param name="services">the services collection</param>
-        </member>
-        <member name="P:ApiVersioningDemo.Configuration.VersioningExtension.XmlCommentsFilePath">
-            <summary>
-            The path for documentation file
+            Allows inheriting the versions from the base class
+            Todo: Stop inheritance to only a single level depth
             </summary>
         </member>
         <member name="T:ApiVersioningDemo.Controllers.BaseWeatherForecastController">
@@ -68,6 +37,12 @@
             </summary>
             <param name="version"></param>
         </member>
+        <member name="T:ApiVersioningDemo.Controllers.LimitedRangeVersionedBaseController">
+            <summary>
+            This class is a single point of changes for controllers that are available on limited range of versions
+            Warning: Not recommended! Better approach is to use the ApiVersionNeutral
+            </summary>
+        </member>
         <member name="T:ApiVersioningDemo.Controllers.v1_1.WeatherForecastController">
             <summary>
             WeatherForecast class
@@ -84,7 +59,8 @@
             <summary>
             Get the weather forecast (Expand to see remarks)
             </summary>
-            <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("1.1")]</b>.<br /> It inherits the attribute from the class level<br />
+            <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("1.1")]</b>.
+            <br /> It inherits the attribute from the class level<br />
             Notify the behavior to the Obsolete attribute
             </remarks>
             <param name="version">The version parameter</param>
@@ -130,6 +106,80 @@
             <remarks>The method does not need to be explicitly decorated with <b>[MapToApiVersion("2.0")]</b>.<br /> It inherits the attribute from the class level</remarks>
             <param name="version">The version parameter</param>
             <returns>A collection of WeatherForecast</returns>
+        </member>
+        <member name="T:ApiVersioningDemo.Controllers.vAll.NeutralActorController">
+            <summary>
+            A version neutral controller. It is exposed on all versions
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.vAll.NeutralActorController.#ctor(Microsoft.Extensions.Logging.ILogger{ApiVersioningDemo.Controllers.vAll.NeutralActorController})">
+            <summary>
+            Base NeutralActorController controller constructor
+            </summary>
+            <param name="logger">The logger</param>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.vAll.NeutralActorController.Get(Microsoft.AspNetCore.Mvc.ApiVersion)">
+            <summary>
+            Get a random sublist of the radio alphabet
+            </summary>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiVersioningDemo.Controllers.vAll.MultiSkilledActorController">
+            <summary>
+            It inherits all the versions from LimitedRangeVersionedBaseController
+            It is a workaround, but try to avoid it. Understand and use ApiVersionNeutral (See NeutralActorController).
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.vAll.MultiSkilledActorController.#ctor(Microsoft.Extensions.Logging.ILogger{ApiVersioningDemo.Controllers.vAll.NeutralActorController})">
+            <summary>
+            MultiSkilled controller constructor
+            </summary>
+            <param name="logger">The logger</param>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.vAll.MultiSkilledActorController.Get(Microsoft.AspNetCore.Mvc.ApiVersion)">
+            <summary>
+            Get a random sublist of the hello array
+            </summary>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions">
+            <summary>
+            Helper class for configuring the OpenApiInfo content for each version
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Custom Swagger Configurator constructor
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiVersioningDemo.Configuration.ConfigureSwaggerGenOptions.CreateOpenApiInfo(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiVersionDescription)">
+            <summary>
+            Internal implementation for building the Swagger basic config
+            </summary>
+            <param name="description">The description object containing the API version.</param>
+            <returns>Open API Info Object, providing the metadata about the Open API</returns>
+        </member>
+        <member name="T:ApiVersioningDemo.Configuration.VersioningExtension">
+            <summary>
+            Versioning extensions class
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Configuration.VersioningExtension.AddCustomizedVersioning(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Customize the Api versioning
+            </summary>
+            <param name="services">the services collection</param>
+        </member>
+        <member name="P:ApiVersioningDemo.Configuration.VersioningExtension.XmlCommentsFilePath">
+            <summary>
+            The path for documentation file
+            </summary>
         </member>
         <member name="P:ApiVersioningDemo.Models.v2_0.WeatherForecast.ExtraInfo">
             <summary>
