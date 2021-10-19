@@ -8,7 +8,7 @@ To provide an example for implementing concurrent versioning support to Web API.
 
 It is an ASP.NET Core Web API project providing a basic architecture for showing several facets of versioning.
 
-![image](https://user-images.githubusercontent.com/86602521/137952705-fcc79c92-a5ab-418b-8a2b-389ccf837546.png)
+![image](https://user-images.githubusercontent.com/86602521/137997215-091045b8-7d9b-4f22-8812-58234905d778.png)
 
 ### API Versions
 
