@@ -6,11 +6,20 @@ To provide an example for implementing concurrent versioning support to Web API.
 
 ## Description
 
-It has a WeatherForecast versioned controller that use different versions of a WeatherForecast model.
+It is an ASP.NET Core Web API project providing a basic architecture for showing several facets of versioning.
+
+![image](https://user-images.githubusercontent.com/86602521/137952705-fcc79c92-a5ab-418b-8a2b-389ccf837546.png)
 
 ### API Versions
 
 The demo implements three concurrent versions (1.1, 1.2, 2.0) that are exposed by collecting ApiVersionAttribute from controllers.
+Three types of controllers are showing different approaches on versioning:
+
+- ApiVersionAttribute - used to apply explicit version
+- ApiVersionNeutralAttribute - used for version independent
+- ApiInheritableVersionAttribute - used for create a base class with a range of versions inheritable by child classes 
+
+## Controllers
 
 ### NeutralActor Controller versions characteristics
 
@@ -44,3 +53,4 @@ They are derived from an abstract base controller that keeps the common characte
 ### Model versions
 
 The model versions does not directly influence the version of the API and are not mandatory to have versions related to the API. For example, a model can stay forever as 1.0 and in the meantime other models to evolve to greater versions. The dependency could be better seen as "the changes in the models push the API version evolution".
+
