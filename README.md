@@ -1,2 +1,46 @@
 # Demo project for Aspnet Core API Versioning
 
+## Purpose
+
+To provide an example for implementing concurrent versioning support to Web API.
+
+## Description
+
+It has a WeatherForecast versioned controller that use different versions of a WeatherForecast model.
+
+### API Versions
+
+The demo implements three concurrent versions (1.1, 1.2, 2.0) that are exposed by collecting ApiVersionAttribute from controllers.
+
+### NeutralActor Controller versions characteristics
+
+It uses the ApiVersionNeutral attribute and it is independent from versions (i.e. it is exposes accross all versions)
+
+### MultiSkilledActor Controller versions characteristics
+
+It inherits the versions placed on a base class decorated with ApiInheritableVersion
+
+### WeatherForecast Controller versions characteristics
+
+They are derived from an abstract base controller that keeps the common characteristics across supported versions.
+
+#### v1.1 
+
+- It is marked as deprecated at class level
+- The Get method is marked as Obsolete
+- Uses a WeatherForecast model v1.1
+
+#### v1.2 
+
+- It is marked as deprecated at class level
+- Uses a WeatherForecast model v1.1
+- The Get method has a patched version of processing the WeatherForecast
+
+#### v2.0
+
+- Uses a WeatherForecast model v2.0
+- The Get method has an improved version
+
+### Model versions
+
+The model versions does not directly influence the version of the API and are not mandatory to have versions related to the API. For example, a model can stay forever as 1.0 and in the meantime other models to evolve to greater versions. The dependency could be better seen as "the changes in the models push the API version evolution".
