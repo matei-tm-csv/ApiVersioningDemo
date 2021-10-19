@@ -12,7 +12,7 @@
       - [v1.2](#v12)
       - [v2.0](#v20)
     - [Model versions](#model-versions)
-    - [Credits](#credits)
+  - [Credits](#credits)
 
 ## Purpose
 
