@@ -4,6 +4,7 @@
   - [Purpose](#purpose)
   - [Description](#description)
     - [API Versions](#api-versions)
+    - [Pinpoints](#pinpoints)
   - [Controllers](#controllers)
     - [NeutralActor Controller versions characteristics](#neutralactor-controller-versions-characteristics)
     - [MultiSkilledActor Controller versions characteristics](#multiskilledactor-controller-versions-characteristics)
@@ -25,7 +26,7 @@ To provide an example for implementing concurrent versioning support to Web API.
 
 It is an ASP.NET Core Web API project providing a basic architecture for showing several facets of versioning. It is focused on URL segment routing.
 
-![image](https://user-images.githubusercontent.com/86602521/137997215-091045b8-7d9b-4f22-8812-58234905d778.png)
+![image](https://user-images.githubusercontent.com/86602521/138067822-f8029716-4216-4821-bb04-6ba435cfd5fa.png)
 
 ### API Versions
 
@@ -34,8 +35,14 @@ Four types of controllers are showing different approaches on versioning:
 
 - ApiVersionAttribute - used to apply explicit version
 - ApiVersionNeutralAttribute - used for version independent
-- ApiInheritableVersionAttribute - used for create a base class with a range of versions inheritable by child classes 
-- ApiRangeV1m2V2m0Attribute - used to apply a fixed subset of versions
+- ApiInheritableVersionAttribute - used for create a base class with a range of versions inheritable by child classes (custom)
+- ApiRangeV1m2V2m0Attribute - used to apply a fixed subset of versions (custom)
+
+### Pinpoints
+
+- Convention based, generic routing ```[Route("api/v{api-version:apiVersion}/[controller]")]```
+- Model Binding for ApiVersion in controllers action signature
+- Different options on signaling the versions
 
 ## Controllers
 
@@ -77,6 +84,7 @@ They are derived from an abstract base controller that keeps the common characte
 
 #### v2.0
 
+- the version is signaled with a custom attribute
 - Uses a WeatherForecast model v2.0
 - The Get method has an improved version
 
