@@ -7,6 +7,7 @@
   - [Controllers](#controllers)
     - [NeutralActor Controller versions characteristics](#neutralactor-controller-versions-characteristics)
     - [MultiSkilledActor Controller versions characteristics](#multiskilledactor-controller-versions-characteristics)
+    - [SafeSkilledActor Controller versions characteristics](#safeskilledactor-controller-versions-characteristics)
     - [WeatherForecast Controller versions characteristics](#weatherforecast-controller-versions-characteristics)
       - [v1.1](#v11)
       - [v1.2](#v12)
@@ -43,6 +44,13 @@ It uses the ApiVersionNeutral attribute and it is independent from versions (i.e
 
 A demo class that presents a usecase with a controller with a limited lifetime between v1.2 and v2.0.
 It inherits the versions placed on a base class decorated with ApiInheritableVersion
+
+
+### SafeSkilledActor Controller versions characteristics
+
+Another demo class that presents a usecase with a controller with a limited lifetime between v1.2 and v2.0.
+It is decorated with a custom attribute (ApiRangeV1m2V2m0) that covers a subset of versions
+
 
 ### WeatherForecast Controller versions characteristics
 
