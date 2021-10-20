@@ -30,11 +30,12 @@ It is an ASP.NET Core Web API project providing a basic architecture for showing
 ### API Versions
 
 The demo implements three concurrent versions (1.1, 1.2, 2.0) that are exposed by collecting ApiVersionAttribute from controllers.
-Three types of controllers are showing different approaches on versioning:
+Four types of controllers are showing different approaches on versioning:
 
 - ApiVersionAttribute - used to apply explicit version
 - ApiVersionNeutralAttribute - used for version independent
 - ApiInheritableVersionAttribute - used for create a base class with a range of versions inheritable by child classes 
+- ApiRangeV1m2V2m0Attribute - used to apply a fixed subset of versions
 
 ## Controllers
 
