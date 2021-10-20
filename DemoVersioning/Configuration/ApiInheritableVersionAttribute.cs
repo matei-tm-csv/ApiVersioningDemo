@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiVersioningDemo.Controllers
+namespace ApiVersioningDemo.Configuration
 {
     /// <summary>
     /// Allows inheriting the versions from the base class

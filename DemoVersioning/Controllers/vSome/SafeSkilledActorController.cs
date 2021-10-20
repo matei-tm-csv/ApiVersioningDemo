@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ApiVersioningDemo.Configuration;
 using ApiVersioningDemo.Controllers.vAll;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -8,29 +9,31 @@ using Microsoft.Extensions.Logging;
 namespace ApiVersioningDemo.Controllers.vSome
 {
     /// <summary>
-    /// It inherits all the versions from LimitedRangeVersionedBaseController
-    /// It is a workaround, but try to avoid it. Understand and use ApiVersionNeutral (See NeutralActorController).
+    /// Implementation with custom attribute for versions range
     /// </summary>
 
-    public class MultiSkilledActorController : LimitedRangeVersionedBaseController
+    [ApiController]
+    [ApiRangeV1m2V2m0]
+    [Route("api/v{api-version:apiVersion}/[controller]")]
+    public class SafeSkilledActorController
     {
         private static readonly string[] HelloArray = {
-            "Hello", "Hallo", "Salut", "Bonjour", "Guten tag", "Ola", "Hola", "Konnichiwa", "Salve"
+            "Hello!", "Hallo!", "Salut!", "Bonjour!", "Guten tag!", "Ola!", "Hola!", "Konnichiwa!", "Salve!"
         };
 
         private readonly ILogger<NeutralActorController> _logger;
 
         /// <summary>
-        /// MultiSkilled controller constructor
+        /// SafeSkilled controller constructor
         /// </summary>
         /// <param name="logger">The logger</param>
-        public MultiSkilledActorController(ILogger<NeutralActorController> logger)
+        public SafeSkilledActorController(ILogger<NeutralActorController> logger)
         {
             _logger = logger;
         }
 
         /// <summary>
-        /// Get a random sublist of the hello array
+        /// Get a random sublist of the hello array with an exclamation mark
         /// </summary>
         /// <param name="version"></param>
         /// <returns></returns>

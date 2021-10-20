@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ApiVersioningDemo.Configuration;
 using ApiVersioningDemo.Models.v2_0;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -11,7 +12,7 @@ namespace ApiVersioningDemo.Controllers.v2_0
     /// WeatherForecast class
     /// </summary>
     [ApiController]
-    [ApiVersion("2.0")]
+    [ApiV2_0]
     [Route("api/v{api-version:apiVersion}/[controller]")]
     public class WeatherForecastController : BaseWeatherForecastController
     {

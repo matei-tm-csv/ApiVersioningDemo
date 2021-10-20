@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiVersioningDemo.Configuration;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiVersioningDemo.Controllers
 {
