@@ -40,9 +40,14 @@ Four types of controllers are showing different approaches on versioning:
 
 ### Pinpoints
 
+- Api version placed on Url segment
 - Convention based, generic routing ```[Route("api/v{api-version:apiVersion}/[controller]")]```
 - Model Binding for ApiVersion in controllers action signature
 - Different options on signaling the versions
+- Semantic versioning with Major.minor
+- Two nuget packages
+    - Swashbuckle.AspNetCore
+    - Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
 
 ## Controllers
 
