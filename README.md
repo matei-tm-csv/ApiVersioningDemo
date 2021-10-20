@@ -53,7 +53,7 @@ Four types of controllers are showing different approaches on versioning:
 
 ### NeutralActor Controller versions characteristics
 
-It uses the ApiVersionNeutral attribute and it is independent from versions (i.e. it is exposes accross all versions)
+It uses the ApiVersionNeutral attribute and it is independent from versions (i.e. it is exposed accross all versions)
 
 ### MultiSkilledActor Controller versions characteristics
 
