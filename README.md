@@ -104,8 +104,9 @@ Versioning and Evolving Microservices in ASP.NET Core](https://app.pluralsight.c
 
 ### Opinionated convention
 
-Source repo: https://github.com/purplebricks/PB.ITOps.AspNetCore.Versioning
-Description: "It extends Microsoft ASP.Net API Versioning by introducing a new convention and attributes."
+On the same topic [purplebricks](https://github.com/purplebricks/PB.ITOps.AspNetCore.Versioning) propose an interesting approach.
+Source repo: https://github.com/purplebricks/PB.ITOps.AspNetCore.Versioning  
+Description: "It extends Microsoft ASP.Net API Versioning by introducing a new convention and attributes."  
 
 Quotes from the repo documentation:
 
