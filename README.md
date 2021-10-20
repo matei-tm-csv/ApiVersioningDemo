@@ -14,6 +14,8 @@
       - [v2.0](#v20)
     - [Model versions](#model-versions)
   - [Credits](#credits)
+  - [Further reading](#further-reading)
+    - [Opinionated convention](#opinionated-convention)
 
 ## Purpose
 
@@ -59,7 +61,7 @@ They are derived from an abstract base controller that keeps the common characte
 #### v1.1 
 
 - It is marked as deprecated at class level (as result, VERSION IS DEPRECATED is displayed)
-- The Get method is marked as Obsolete (as result, the endpoint is grayed out)
+- The Get method is marked as Obsolete (as result, the action endpoint is grayed out in SwaggerUI)
 - Uses a WeatherForecast model v1.1
 
 ![image](https://user-images.githubusercontent.com/86602521/137956161-45671ad1-d558-40e5-90c7-5005038e3bc2.png)
@@ -89,3 +91,17 @@ The model versions does not directly influence the version of the API, and it is
 Versioning and Evolving Microservices in ASP.NET Core](https://app.pluralsight.com/library/courses/versioning-evolving-microservices-asp-dot-net-core/exercise-files)
 - ASP.NET API Versioning [samples](https://github.com/dotnet/aspnet-api-versioning/tree/master/samples)
 
+## Further reading
+
+### Opinionated convention
+
+Source repo: https://github.com/purplebricks/PB.ITOps.AspNetCore.Versioning
+Description: "It extends Microsoft ASP.Net API Versioning by introducing a new convention and attributes."
+
+Quotes from the repo documentation:
+
+  - There is only 1 supported API version at any given time (the latest). All other versions are deprecated.
+  - Only numbered major versions allowed (e.g `V1`, `V2`, `V3`, etc.)
+  - When a new API version is introduced, all actions are automatically added to the new API version (unless explicitly marked as removed).
+  - Simplified api developer story - we only need to make changes where there are differences between versions. Previously we would need to manually add attributes to multiple classes and methods that have not had any changes.
+  - Less error prone - Less chance of making a mistake when introducing a new api version.
