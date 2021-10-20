@@ -11,14 +11,14 @@
             Todo: Stop inheritance to only a single level depth
             </summary>
         </member>
-        <member name="T:ApiVersioningDemo.Configuration.ApiRangeV12V20Attribute">
+        <member name="T:ApiVersioningDemo.Configuration.ApiRangeV1m2V2m0Attribute">
             <summary>
             Fixed range versioning
             </summary>
         </member>
-        <member name="P:ApiVersioningDemo.Configuration.ApiRangeV12V20Attribute.Options">
+        <member name="P:ApiVersioningDemo.Configuration.ApiRangeV1m2V2m0Attribute.Options">
             <summary>
-            Advertised Option
+            Provider Options
             </summary>
         </member>
         <member name="T:ApiVersioningDemo.Configuration.ApiV2_0Attribute">
@@ -200,8 +200,7 @@
         </member>
         <member name="T:ApiVersioningDemo.Controllers.vSome.SafeSkilledActorController">
             <summary>
-            It inherits all the versions from LimitedRangeVersionedBaseController
-            It is a workaround, but try to avoid it. Understand and use ApiVersionNeutral (See NeutralActorController).
+            Implementation with custom attribute for versions range
             </summary>
         </member>
         <member name="M:ApiVersioningDemo.Controllers.vSome.SafeSkilledActorController.#ctor(Microsoft.Extensions.Logging.ILogger{ApiVersioningDemo.Controllers.vAll.NeutralActorController})">
@@ -212,7 +211,7 @@
         </member>
         <member name="M:ApiVersioningDemo.Controllers.vSome.SafeSkilledActorController.Get(Microsoft.AspNetCore.Mvc.ApiVersion)">
             <summary>
-            Get a random sublist of the hello array
+            Get a random sublist of the hello array with an exclamation mark
             </summary>
             <param name="version"></param>
             <returns></returns>

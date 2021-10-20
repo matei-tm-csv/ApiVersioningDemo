@@ -19,6 +19,6 @@ namespace ApiVersioningDemo.Configuration
         /// <summary>
         /// Provider Options
         /// </summary>
-        public ApiVersionProviderOptions Options => ApiVersionProviderOptions.Mapped;
+        public ApiVersionProviderOptions Options => ApiVersionProviderOptions.None;
     }
 }
