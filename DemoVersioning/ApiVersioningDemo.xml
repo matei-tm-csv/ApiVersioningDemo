@@ -161,6 +161,25 @@
             <param name="version">The version parameter</param>
             <returns>A collection of WeatherForecast</returns>
         </member>
+        <member name="T:ApiVersioningDemo.Controllers.v3_0.WeatherForecastController">
+            <summary>
+            WeatherForecast class. 
+            </summary>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.v3_0.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{ApiVersioningDemo.Controllers.v3_0.WeatherForecastController})">
+            <summary>
+            WeatherForecast constructor
+            </summary>
+            <param name="logger">logger</param>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.v3_0.WeatherForecastController.Get(Microsoft.AspNetCore.Mvc.ApiVersion)">
+            <summary>
+            Get the weather forecast (Expand to see remarks)
+            </summary>
+            <remarks>The method does not need to be explicitly decorated It inherits the attribute from the class level. Version is declared by convention in ConfigureServices of the Startup class</remarks>
+            <param name="version">The version parameter</param>
+            <returns>A collection of WeatherForecast</returns>
+        </member>
         <member name="T:ApiVersioningDemo.Controllers.vAll.NeutralActorController">
             <summary>
             A version neutral controller. It is exposed on all versions

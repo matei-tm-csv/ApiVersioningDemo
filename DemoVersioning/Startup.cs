@@ -1,10 +1,12 @@
 using ApiVersioningDemo.Configuration;
+using ApiVersioningDemo.Controllers.v3_0;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.Versioning.Conventions;
 
 namespace ApiVersioningDemo
 {
@@ -36,6 +38,12 @@ namespace ApiVersioningDemo
         {
             services.AddControllers();
             services.AddCustomizedVersioning();
+
+            services.AddApiVersioning(options =>
+            {
+                options.Conventions.Controller<WeatherForecastController>().HasApiVersion(3, 0);
+            });
+
         }
 
         /// <summary>
