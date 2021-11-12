@@ -40,15 +40,20 @@ Four types of controllers are showing different approaches on versioning:
 
 ### Pinpoints
 
+- Api version placed on Url segment
 - Convention based, generic routing ```[Route("api/v{api-version:apiVersion}/[controller]")]```
 - Model Binding for ApiVersion in controllers action signature
 - Different options on signaling the versions
+- Semantic versioning with Major.minor
+- Two nuget packages
+    - Swashbuckle.AspNetCore
+    - Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
 
 ## Controllers
 
 ### NeutralActor Controller versions characteristics
 
-It uses the ApiVersionNeutral attribute and it is independent from versions (i.e. it is exposes accross all versions)
+It uses the ApiVersionNeutral attribute and it is independent from versions (i.e. it is exposed accross all versions)
 
 ### MultiSkilledActor Controller versions characteristics
 
@@ -80,7 +85,7 @@ They are derived from an abstract base controller that keeps the common characte
 - Uses a WeatherForecast model v1.1
 - The Get method has a patched version of processing the WeatherForecast
 
-![image](https://user-images.githubusercontent.com/86602521/137957109-37f48b16-4de1-43b1-a0f0-a3d3ea1a56eb.png)
+![image](https://user-images.githubusercontent.com/86602521/138076984-2be8fe6d-09f4-48df-8119-d0474127c758.png)
 
 #### v2.0
 
@@ -88,7 +93,7 @@ They are derived from an abstract base controller that keeps the common characte
 - Uses a WeatherForecast model v2.0
 - The Get method has an improved version
 
-![image](https://user-images.githubusercontent.com/86602521/137956341-9e3cc1df-4c38-45e2-b0a3-8e6bafb8c892.png)
+![image](https://user-images.githubusercontent.com/86602521/138077042-52c564fc-bb91-4583-b641-9f7b67f1bf24.png)
 
 ### Model versions
 
@@ -104,7 +109,7 @@ Versioning and Evolving Microservices in ASP.NET Core](https://app.pluralsight.c
 
 ### Opinionated convention
 
-On the same topic [purplebricks](https://github.com/purplebricks/PB.ITOps.AspNetCore.Versioning) propose an interesting approach.
+On the same topic, [purplebricks](https://github.com/purplebricks/PB.ITOps.AspNetCore.Versioning) propose an interesting approach.  
 Source repo: https://github.com/purplebricks/PB.ITOps.AspNetCore.Versioning  
 Description: "It extends Microsoft ASP.Net API Versioning by introducing a new convention and attributes."  
 
